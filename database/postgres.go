@@ -5,10 +5,9 @@ import (
 	"fmt"
 
 	"github.com/dilly3/doctors-portal/models"
-	_ "github.com/go-sql-driver/mysql"
 	_ "github.com/lib/pq"
 	"golang.org/x/crypto/bcrypt"
-	_ "gorm.io/driver/mysql"
+
 	_ "gorm.io/driver/postgres"
 	"gorm.io/gorm"
 	"gorm.io/gorm/clause"
