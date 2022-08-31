@@ -15,7 +15,6 @@ import (
 	"github.com/dilly3/doctors-portal/utils"
 	"github.com/gorilla/mux"
 	"github.com/joho/godotenv"
-	_ "github.com/joho/godotenv"
 )
 
 var PgHandler = NewHandler()
