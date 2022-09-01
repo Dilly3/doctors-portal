@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Health Plus</title>
+
+    <style>
+        *{
+            box-sizing: border-box;
+        }
+        body{
+            margin: 0;
+            font-family: Georgia, 'Times New Roman', Times, serif;
+
+        }
+
+        .container {
+            width: 85%;
+            margin: 0 auto;
+        }
+
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            padding: 20px 0;
+        }
+        nav img {
+            padding-right: 120px;
+            height: 4rem;
+        }
+        nav ul {
+            display: flex;
+            list-style-type: none;
+            margin: auto 0;
+
+            padding: 0;
+        }
+
+        nav li {
+            margin-left: 40px;
+
+        }
+        nav li a {
+            color: rgb(6, 87, 187);
+            text-transform: uppercase;
+            text-decoration: none;
+            margin-top: 10px;
+        }
+
+        main {
+            height: 90vh;
+            background-color: hsl(191, 37%, 85%);
+            padding-bottom: 50px;
+        }
+       
+
+
+</style>
+</head>
+<body>
+<div class="container">
+    <nav>
+       <img src="/static/images/tinywow_remove_bg_1868557.png" alt="logo" />
+        <ul>
+            <li><a href="workinghours">Set Working Hours</a></li>
+            <li><a href="doctorlogout">Log Out</a></li>
+            
+        </ul>
+    </nav>
+</div>
+
+<main>
+    <br>
+    <h1>Welcome Dr. {{ .Name}}</h1>
+    <br><br>
+    <h2>YOUR SPECIALTY: {{ .Specialty}}</h2>
+    <br><br>
+    <h3>OPEN: {{ .StringStart}}</h3>
+    <br><br>
+    <h3>CLOSE: {{ .StringClose}}</h3>
+    <br><br>
+    <h3><a href="viewdoctorappointments">YOUR APPOINTMENT SCHEDULES</a></h3>
+
+    
+</main>
+</body>
+</html>
