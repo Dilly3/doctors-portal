@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Appointment Error</title>
+    <style>
+        *{
+            box-sizing: border-box;
+        }
+        body{
+            margin: 0;
+            font-family: Georgia, 'Times New Roman', Times, serif;
+
+        }
+
+        .container {
+            width: 85%;
+            margin: 0 auto;
+        }
+
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            padding: 20px 0;
+        }
+        nav img {
+            padding-right: 120px;
+            height: 4rem;
+        }
+        nav ul {
+            display: flex;
+            list-style-type: none;
+            margin: auto 0;
+
+            padding: 0;
+        }
+
+        nav li {
+            margin-left: 40px;
+
+        }
+        nav li a {
+            color: rgb(6, 87, 187);
+            text-transform: uppercase;
+            text-decoration: none;
+            margin-top: 10px;
+        }
+
+        main {
+            height: 90vh;
+            background-color: hsl(191, 37%, 85%);
+            padding-bottom: 50px;
+            margin: auto;
+            padding-top: 20%;
+        }
+        h1{
+            color: red;
+            text-align: center;
+        }
+        h4{
+            color: rgba(105, 68, 13, 0.625);
+            text-align: center;
+        }
+       h3 a{
+           text-decoration: none;
+           color: rgba(15, 50, 38, 0.494);
+           display: block;
+           text-align: center;
+       }
+
+
+</style>
+</head>
+<body>
+    <main>
+        <h1>404</h1>
+        <h4>{{.}}</h4>
+        <br>
+        <h3><a href="/doctorDashboard">HOME</a></h3>
+    </main>
+    
+</body>
+</html>

@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Health Plus</title>
+
+    <style>
+        *{
+            box-sizing: border-box;
+        }
+        body{
+            margin: 0;
+            font-family: Georgia, 'Times New Roman', Times, serif;
+
+        }
+
+        .container {
+            width: 85%;
+            margin: 0 auto;
+        }
+
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            padding: 20px 0;
+        }
+        nav img {
+            padding-right: 120px;
+            height: 4rem;
+        }
+        nav ul {
+            display: flex;
+            list-style-type: none;
+            margin: auto 0;
+
+            padding: 0;
+        }
+
+        nav li {
+            margin-left: 40px;
+
+        }
+        nav li a {
+            color: rgb(6, 87, 187);
+            text-transform: uppercase;
+            text-decoration: none;
+            margin-top: 10px;
+        }
+
+        main {
+            height: 90vh;
+            background-color: hsl(191, 37%, 85%);
+            padding-bottom: 50px;
+        }
+
+
+
+    </style>
+</head>
+<body>
+<div class="container">
+    <nav>
+        <img src="/static/images/tinywow_remove_bg_1868557.png" alt="logo" />
+        <ul>
+            <li><a href="/patientdashboard">Dashboard</a></li>
+            <li><a href="/patientlogout">Log Out</a></li>
+
+        </ul>
+    </nav>
+</div>
+
+<main>
+    <br>
+    <h1>SELECT FROM AVAILABLE TIME</h1>
+
+    <form action="/bookappointment/{{.ID}}" method="POST"  >
+        <!-- <input type="text" id="time" name="time" placeholder="SELECTED TIME" required />
+        <br><br> -->
+<label for="time"> Select from Available Time</label>
+        <select name="time" id="time">
+
+            {{range $key, $value := .WorkingHours}}
+            <option value="{{$key}}">{{$value}}</option>
+            {{end}}
+         </select>
+         <br><br>
+        <input type="text" id="purpose" name="purpose" placeholder="PURPOSE" required />
+        <br><br>
+        <button type="submit">BOOK</button>
+    </form>
+
+    
+</main>
+</body>
+</html>
