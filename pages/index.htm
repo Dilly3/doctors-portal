@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Health Plus</title>
+
+    <style>
+        *{
+            box-sizing: border-box;
+        }
+        body{
+            margin: 0;
+            font-family: Georgia, 'Times New Roman', Times, serif;
+
+        }
+
+        .container {
+            width: 85%;
+            margin: 0 auto;
+        }
+
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            padding: 20px 0;
+        }
+        nav img {
+            padding-right: 120px;
+            height: 4rem;
+        }
+        nav ul {
+            display: flex;
+            list-style-type: none;
+            margin: auto 0;
+
+            padding: 0;
+        }
+
+        nav li {
+            margin-left: 40px;
+
+        }
+        nav li a {
+            color: rgb(6, 87, 187);
+            text-transform: uppercase;
+            text-decoration: none;
+            margin-top: 10px;
+        }
+
+        main {
+            height: 720px;
+            background-color: hsl(191, 37%, 85%);
+        }
+        main img {
+            height: 600px;
+            width: 600px;
+            image-rendering: optimizeQuality;
+            box-shadow: 12px 12px 16px 0 rgba(0, 0, 0, 0.25),
+            -8px -8px 12px 0 rgba(255, 255, 255, 0.3);
+            border-radius: 30px;
+        }
+
+        .pageContainer {
+            display: flex;
+            justify-content: space-between;
+            padding-top: 20px;
+            padding: auto;
+
+
+
+        }
+
+        .pageContent {
+            margin: 100px 0;
+            box-shadow: 12px 12px 16px 0 rgba(0, 0, 0, 0.25),
+            -8px -8px 12px 0 rgba(255, 255, 255, 0.3);
+            border-radius: 30px;
+            width: 50%;
+            height: 50%;
+
+        }
+
+        .pageContent h1 {
+            margin-top: 60px;
+        }
+        .pageContent p {
+            margin: 50px 0;
+            font-size: large;
+        }
+
+        .doctorButton {
+
+            background-color:#2d6fe0;
+            border-radius:8px;
+            border:1px solid #4167d9;
+            display:inline-block;
+            cursor:pointer;
+            color:#ffffff;
+            font-family:Arial;
+            font-size:19px;
+            padding:16px 50px;
+            text-decoration:none;
+        }
+
+        .appointment {
+            background-color:#2d6fe0;
+            border-radius:8px;
+            border:1px solid #4167d9;
+            display:inline-block;
+            cursor:pointer;
+            color:#ffffff;
+            font-family:Arial;
+            font-size:19px;
+            padding:16px 30px;
+            text-decoration:none;
+        }
+        img{
+    width: 100%;
+    height: 100%;
+}
+
+
+</style>
+</head>
+<body>
+<div class="container">
+    <nav>
+       <a href="/"><img src="/static/images/tinywow_remove_bg_1868557.png" alt="logo" /></a>
+        <ul>
+            <li><a href="/">Home</a></li>
+            <li><a href="#">About</a></li>
+            <li><a href="#">Contact</a></li>
+        </ul>
+    </nav>
+</div>
+
+<main>
+    <div class="container">
+        <div class="pageContainer">
+            <div class="pageContent">
+                <h1 style="padding:30px ;">
+                    Making Health <br />
+                    Care Better Together
+                </h1>
+                <p style="padding: 30px;">
+                    Health Plus gives you the opportunity to access Health Care
+                    <br>at your finger tips. <br />
+                    Stop GOOGLING your symptoms, hear from a professional
+                    <br />
+                    Health Is Wealth or so they say
+                    <br />
+                    So stay Healthy to stay Wealthy
+                </p>
+                <a style="text-decoration:none ; margin: 10px auto;" href="patientlogin" class="appointment">Book a Doctor</a>
+                <a style="text-decoration:none ; margin: 10px auto;" href="doctorlogin" class="doctorButton">Doctor's Portal</a>
+            </div>
+
+            <img src="/static/images/doctors-1.jpeg" alt="mockup" />
+        </div>
+    </div>
+</main>
+</body>
+</html>
