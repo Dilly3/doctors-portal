@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Health Plus Doctors</title>
+
+    <style>
+        *{
+            box-sizing: border-box;
+        }
+        body{
+            margin: 0;
+            font-family: Georgia, 'Times New Roman', Times, serif;
+            height: 1000px;
+
+        }
+
+        .container {
+            width: 85%;
+            margin: 0 auto;
+        }
+
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            padding: 20px 0;
+        }
+        nav img {
+            padding-right: 120px;
+            height: 4rem;
+        }
+        nav ul {
+            display: flex;
+            list-style-type: none;
+            margin: auto 0;
+
+            padding: 0;
+        }
+
+        nav li {
+            margin-left: 40px;
+
+        }
+        nav li a {
+            color: rgb(6, 87, 187);
+            text-transform: uppercase;
+            text-decoration: none;
+            margin-top: 10px;
+        }
+
+        main {
+            height: min-content;
+            background-color: hsl(191, 37%, 85%);
+            padding-bottom: 200px;
+        }
+
+
+
+    </style>
+</head>
+<body>
+<div class="container">
+    <nav>
+        <img src="/static/images/tinywow_remove_bg_1868557.png" alt="logo" />
+        <ul>
+            <li><a href="patientdashboard">Dashboard</a></li>
+            <li><a href="patientlogout">Log Out</a></li>
+
+        </ul>
+    </nav>
+</div>
+
+<main>
+    <br>
+    <h1>LIST OF AVAILABLE SPECIALISED DOCTORS</h1>
+    {{range $i, $v:= .}}
+    <br>
+    <div class="">
+        <h2>{{ .Name}}</h2>
+        <p style="font-size: 23px">
+            SPECIALTY: {{ .Specialty}}
+            <br><br>
+            AVAILABLE WORKING HOURS: {{ .StringStart}} TO {{.StringClose}}
+        </p>
+        <a href="doctorappointment/{{ .ID }}">BOOK APPOINTMENT</a>
+    </div>
+    {{end}}
+
+</main>
+</body>
+</html>
