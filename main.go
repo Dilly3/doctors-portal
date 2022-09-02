@@ -2,14 +2,15 @@ package main
 
 import (
 	"net/http"
+	"os"
+	"time"
 
 	"github.com/dilly3/doctors-portal/controllers"
-	_ "github.com/dilly3/doctors-portal/utils"
 )
 
 // start
 func main() {
-
+	time.Sleep(time.Millisecond * 500)
 	done := make(chan error)
 
 	mux := controllers.SetupRouter()
@@ -17,4 +18,5 @@ func main() {
 	go controllers.GracefulShutdown(done, server)
 	http.ListenAndServe(port, pgHandler.Sessions.LoadAndSave(mux))
 	<-done
+	os.Exit(0)
 }

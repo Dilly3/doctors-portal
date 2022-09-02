@@ -18,8 +18,11 @@ import (
 
 var PgHandler = NewHandler()
 
-func SetupRouter() *mux.Router {
+// Register handler
 
+// Bootstrap
+
+func SetupRouter() *mux.Router {
 	var dir string
 	router := mux.NewRouter()
 

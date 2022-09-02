@@ -3,11 +3,14 @@ package database
 import (
 	_ "database/sql"
 	"fmt"
+	"os"
 
 	"github.com/dilly3/doctors-portal/models"
+	"github.com/dilly3/doctors-portal/utils"
 	_ "github.com/lib/pq"
 	"golang.org/x/crypto/bcrypt"
 
+	"gorm.io/driver/postgres"
 	_ "gorm.io/driver/postgres"
 	"gorm.io/gorm"
 	"gorm.io/gorm/clause"
@@ -17,7 +20,27 @@ type PostgresDb struct {
 	DB *gorm.DB
 }
 
-func NewPgDB() DataStore {
+func SetupDB() *gorm.DB {
+	utils.LoadEnv()
+	password := os.Getenv("DB_PASSWORD")
+	dbDatabase := os.Getenv("DB")
+	root := os.Getenv("DB_ROOTS")
+	port := os.Getenv("DB_PORT")
+	dsn := fmt.Sprintf("host=localhost user=%s password=%s dbname=%s port=%s sslmode=disable TimeZone=Asia/Shanghai", root, password, dbDatabase, port)
+	db, err := gorm.Open(postgres.Open(dsn), &gorm.Config{})
+	if err != nil {
+		fmt.Println("failed to connect database: ", err)
+		os.Exit(1)
+
+	}
+	err = db.AutoMigrate(&models.Doctor{}, &models.Patient{}, &models.Appointment{})
+	if err != nil {
+		fmt.Printf("failed to migrate: %v", err)
+		os.Exit(1)
+	}
+	return db
+}
+func NewDB() DataStore {
 	return &PostgresDb{
 		DB: SetupDB(),
 	}

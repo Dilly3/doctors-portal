@@ -27,7 +27,7 @@ type Handler struct {
 func NewHandler() *Handler {
 
 	newHandler := &Handler{
-		DB:       database.NewPgDB(),
+		DB:       database.NewDB(),
 		Sessions: scs.New(),
 		Logger:   zap.NewExample(),
 	}

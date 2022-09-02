@@ -5,6 +5,8 @@ import (
 	"fmt"
 	"log"
 	"os"
+
+	"github.com/joho/godotenv"
 )
 
 type ErrorResponse struct {
@@ -28,6 +30,12 @@ func GetPortFromEnv() string {
 		port = "8080"
 	}
 	return port
+}
+func LoadEnv() {
+	err := godotenv.Load()
+	if err != nil {
+		log.Fatal("Error loading .env file")
+	}
 }
 func GenerateRandomID() string {
 	b := make([]byte, 9)
