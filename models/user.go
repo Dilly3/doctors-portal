@@ -14,6 +14,11 @@ type User struct {
 	Password     string `json:"password,omitempty" gorm:"-"`
 }
 
+func NewUser() *User {
+	return &User{}
+
+}
+
 type Dean struct {
 	ID           string         `json:"id" gorm:"primaryKey"`
 	WorkingHours map[int]string `json:"workinghours"`
