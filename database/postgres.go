@@ -20,7 +20,7 @@ type PostgresDb struct {
 	DB *gorm.DB
 }
 
-func SetupDB() *gorm.DB {
+func SetupDB() *Engine {
 	utils.LoadEnv()
 	password := os.Getenv("DB_PASSWORD")
 	dbDatabase := os.Getenv("DB")
@@ -38,11 +38,12 @@ func SetupDB() *gorm.DB {
 		fmt.Printf("failed to migrate: %v", err)
 		os.Exit(1)
 	}
-	return db
+	return &Engine{Gorm: db}
 }
 func NewDB() DataStore {
 	return &PostgresDb{
-		DB: SetupDB(),
+
+		DB: SetupDB().Gorm,
 	}
 }
 
